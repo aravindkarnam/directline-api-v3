@@ -1,0 +1,39 @@
+{
+  "name": "directline-api-v3",
+  "version": "1.0.0",
+  "description": "Connect to microsoft bot framework, directline through Version 3 APIs",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aravindkarnam/directline-api-v3.git"
+  },
+  "keywords": [
+    "microsoft",
+    "bot",
+    "framework",
+    "version",
+    "3",
+    "direct",
+    "line",
+    "web",
+    "socket",
+    "angular2",
+    "node.js",
+    "framework",
+    "for",
+    "microsoft",
+    "bot",
+    "framework",
+    "chat",
+    "client"
+  ],
+  "author": "aravind karnam rajendraprasad",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aravindkarnam/directline-api-v3/issues"
+  },
+  "homepage": "https://github.com/aravindkarnam/directline-api-v3#readme"
+}
