@@ -2,7 +2,7 @@
 Connect to microsoft bot framework, directline through Version 3 APIs
 ##install
 npm install directline-api-v3
-##usage
+#usage
 ```javascript
 var BotConnect = require('directline-api-v3');
 ```
@@ -16,8 +16,8 @@ var BotConnect = require('directline-api-v3');
      ()=>console.log('complete')
   )
   ```
-  `getTokenObject(secret)` takes a string(your app secret) as input and returns an observable which inturn returns a tokenObject.
-  A `TokenObject` returned by this observable will look like this and you will have to store this object for further operations.
+  >`getTokenObject(secret)` takes a string(your app secret) as input and returns an observable which inturn returns a tokenObject.
+  >A `TokenObject` returned by this observable will look like this and you will have to store this object for further operations.
   
   ```javascript
 { 
