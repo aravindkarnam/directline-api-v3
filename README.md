@@ -14,7 +14,7 @@ var BotConnect = require('directline-api-v3');
   BotConnect.getTokenObject('add your app secret here').subscribe(
       (tokenObject)=>{
        console.log(tokenObject);
-     }
+     },
      (err)=>console.log(err),
      ()=>console.log('complete')
   )
