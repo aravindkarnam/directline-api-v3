@@ -96,4 +96,36 @@ BotConnect.prototype.sendMessage = (TokenObject, message) => {
 
     })
 }
+BotConnect.prototype.endConversation = (TokenObject) => {
+    return Rx.Observable.create(observer => {
+        request({
+            method: 'POST',
+            url: "https://directline.botframework.com/v3/directline/conversations/" + TokenObject.conversationId + "/activities",
+            headers: {
+                'Authorization': 'Bearer ' + TokenObject.token
+            },
+            json:true,
+            body: {
+                "type": "endOfConversation",
+                "from": {
+                    "id": TokenObject.conversationId,
+                }
+            }
+        }, function (err, response, body) {
+            if (err) {
+                observer.error(err);
+                observer.complete();
+            }
+            if (response.statusCode === 200 || 201) {
+                observer.next(body);
+                observer.complete();
+            }
+            else {
+                observer.error(response.statusCode + " error ");
+                observer.complete();
+            }
+        })
+
+    })
+}
 module.exports = new BotConnect();

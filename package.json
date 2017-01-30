@@ -1,6 +1,6 @@
 {
   "name": "directline-api-v3",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Connect to microsoft bot framework, directline through Version 3 APIs",
   "main": "index.js",
   "scripts": {
@@ -35,5 +35,11 @@
   "bugs": {
     "url": "https://github.com/aravindkarnam/directline-api-v3/issues"
   },
-  "homepage": "https://github.com/aravindkarnam/directline-api-v3#readme"
+  "homepage": "https://github.com/aravindkarnam/directline-api-v3#readme",
+  "dependencies": {
+    "request": "^2.79.0",
+    "rxjs": "^5.0.3",
+    "rxjs-es": "^5.0.0-beta.12",
+    "ws": "^1.1.1"
+  }
 }
