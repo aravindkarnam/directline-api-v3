@@ -49,7 +49,8 @@ BotConnect.prototype.initConversationStream = (TokenObject) => {
             if (response.statusCode === 200 || 201) {
                 var ws = new WebSocket(JSON.parse(body).streamUrl);
                 ws.on('message', function (data, flags) {
-                    observer.next(data);
+                    if(JSON.parse(data).activities[0].from.id!==TokenObject.conversationId)
+                    observer.next(JSON.parse(data).activities[0].text);
                 });
                 ws.on('close', function close() {
                     observer.complete();
