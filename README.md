@@ -1,6 +1,10 @@
 # directline-api-v3
 Connect to microsoft bot framework, directline through Version 3 APIs
- `npm install directline-api-v3`
+## Install
+```
+npm install directline-api-v3
+
+```
 # usage
 ```javascript
 var BotConnect = require('directline-api-v3');
