@@ -1,6 +1,6 @@
 {
   "name": "directline-api-v3",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Connect to microsoft bot framework, directline through Version 3 APIs",
   "main": "index.js",
   "scripts": {
