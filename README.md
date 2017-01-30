@@ -43,7 +43,7 @@ var BotConnect = require('directline-api-v3');
          BotConnect.sendMessage(TokenObject,"hello").subscribe(
                       next:(data)=>console.log(data),
                       error:(err)=>console.log(err),
-                      complet:()=>console.log("complete")
+                      complete:()=>console.log("complete")
 )}
 ```
 > `sendMessage(TokenObject,message)` will take the `TokenObject` and a string containing the message as input and return an observable using which you can test weather it was successfull. If your next call back gets called then the operation can be considered successful.
