@@ -3,7 +3,7 @@ Connect to microsoft bot framework, directline through Version 3 APIs
 ##install
 npm install directline-api-v3
 ##usage
-   var BotConnect = require('directline-api-v3');
+```var BotConnect = require('directline-api-v3');```
 ##exchanging secret for a token
 ```
   BotConnect.getTokenObject('add your app secret here').subscribe(
