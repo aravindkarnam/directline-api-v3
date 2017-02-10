@@ -1,5 +1,7 @@
 # directline-api-v3
 Connect to microsoft bot framework, directline through Version 3 APIs
+## This library is intended as a demonstration of my skills. Please follow this link for official microsoft library.
+https://github.com/microsoft/botframework-directlinejs
 ## Install
 ```
 npm install directline-api-v3
