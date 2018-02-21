@@ -64,7 +64,7 @@ BotConnect.prototype.initConversationStream = (TokenObject) => {
 
     })
 }
-BotConnect.prototype.sendMessage = (TokenObject, message) => {
+BotConnect.prototype.sendMessage = (TokenObject, message, options) => {
     return Rx.Observable.create(observer => {
         request({
             method: 'POST',
@@ -75,9 +75,7 @@ BotConnect.prototype.sendMessage = (TokenObject, message) => {
             json:true,
             body: {
                 "type": "message",
-                "from": {
-                    "id": TokenObject.conversationId,
-                },
+                "from": options ? options.from : {id: TokenObject.conversationId},
                 "text": message
             }
         }, function (err, response, body) {
