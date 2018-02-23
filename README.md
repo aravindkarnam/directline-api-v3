@@ -45,11 +45,12 @@ var BotConnect = require('directline-api-v3');
 > `initConversationStream(TokenObject)` will take the `TokenObject` as input and return an oberservable that will inturn emit messages from the bot. Under the hood a web socket is setup for receiving messages from bot, when the bot closes the websocket you will receive a complete event from observable.
 ## sending a message to bot
 ```javascript
-         BotConnect.sendMessage(TokenObject,"hello").subscribe(
+         let options = { from: 'test@mail.com'};
+         BotConnect.sendMessage(TokenObject,"hello", options).subscribe(
                       next:(data)=>console.log(data),
                       error:(err)=>console.log(err),
                       complete:()=>console.log("complete")
 )}
 ```
-> `sendMessage(TokenObject,message)` will take the `TokenObject` and a string containing the message as input and return an observable using which you can test weather it was successfull. If your next call back gets called then the operation can be considered successful.
+> `sendMessage(TokenObject,message)` will take the `TokenObject` and a string containing the message as input as well as `options` object containing `from` property  and return an observable using which you can test weather it was successfull. If your next call back gets called then the operation can be considered successful.
 # This is a work in progress I will keep adding more features in near future. Thanks
