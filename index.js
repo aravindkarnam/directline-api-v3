@@ -52,7 +52,7 @@ BotConnect.prototype.initConversationStream = (TokenObject, callback) => {
                 ws.on('open', () => callback(null));
                 ws.on('message', function (data, flags) {
                     if(typeof(data) === 'object' && JSON.parse(data).activities[0].from.id!==TokenObject.conversationId)
-                    observer.next(JSON.parse(data).activities[0].text);
+                    observer.next(JSON.parse(data));
                 });
                 ws.on('close', function close() {
                     observer.complete();
