@@ -33,7 +33,7 @@ BotConnect.prototype.getTokenObject = (secret) => {
 
     })
 }
-BotConnect.prototype.initConversationStream = (TokenObject) => {
+BotConnect.prototype.initConversationStream = (TokenObject, callback) => {
     return Rx.Observable.create(observer => {
         request({
             method: 'POST',
@@ -43,20 +43,29 @@ BotConnect.prototype.initConversationStream = (TokenObject) => {
             }
         }, function (err, response, body) {
             if (err) {
+            	callback(err);
                 observer.error(err);
                 observer.complete();
             }
             if (response.statusCode === 200 || 201) {
                 var ws = new WebSocket(JSON.parse(body).streamUrl);
+                ws.on('open', () => callback(null));
                 ws.on('message', function (data, flags) {
-                    if(JSON.parse(data).activities[0].from.id!==TokenObject.conversationId)
-                    observer.next(JSON.parse(data).activities[0].text);
+                	try {
+                		let parsedData = JSON.parse(data);
+										if(JSON.parse(data).activities[0].from.id!==TokenObject.conversationId)
+											observer.next(parsedData);
+									}
+									catch(e) {
+                		console.log(e);
+									}
                 });
                 ws.on('close', function close() {
                     observer.complete();
                 });
             }
             else {
+            	callback(response.statusCode + " error ");
                 observer.error(response.statusCode + " error ");
                 observer.complete();
             }
